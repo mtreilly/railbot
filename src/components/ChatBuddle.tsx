@@ -10,7 +10,9 @@ const ChatBubble = ({ text, isUser }: Props) => {
   const isUserPosition = isUser ? "justify-end" : "justify-start";
   return (
     <div className={`mt-4 flex ${isUserPosition}`}>
-      <div className={`rounded-lg p-4 text-gray-900 w-1/2 ${isUserBackground}`}>
+      <div
+        className={`rounded-lg p-4 text-gray-900 w-1/2 text-sm ${isUserBackground}`}
+      >
         <p>{text}</p>
       </div>
     </div>

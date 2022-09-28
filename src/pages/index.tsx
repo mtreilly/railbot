@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import ChatBubble from "../components/ChatBuddle";
 import { trpc } from "../utils/trpc";
+import ChatInput from "../components/ChatInput";
 
 const sampleChat = [
   {
@@ -27,24 +28,28 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Railbot</title>
-        <meta name="description" content="Railbot chat and discovery rail times" />
+        <meta
+          name="description"
+          content="Railbot chat and discovery rail times"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex h-screen flex-col items-center">
+      <main className="flex h-screen flex-col items-center  bg-gray-50">
         <div>
-          <h1 className="text-5xl md:text-[5rem] leading-normal font-extrabold text-gray-700">RailBot</h1>
+          <h1 className="text-5xl md:text-[5rem] leading-normal font-extrabold text-gray-700">
+            RailBot
+          </h1>
         </div>
-        <div className="flex h-full flex-col pt-3 mt-3 w-full bg-gray-50 m-4 p-4 rounded-lg">
+        <div className="flex h-full flex-col pt-3 mt-3 w-full m-4 p-4 rounded-lg">
           <div className="flex flex-row flex-wrap">
             {sampleChat.map((chat, index) => (
               <ChatBubble key={index} text={chat.text} isUser={chat.isUser} />
             ))}
           </div>
         </div>
-        <div className="border flex flex-col flex-1 border-gray-500 mb-10 w-3/4 bg-white rounded-t-xl border-1">
-          <input type="text" className="text-2xl p-10 rounded-t-xl w-full" placeholder="Enter your station" />
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ">Submit</button>
+        <div className="w-full p-4">
+          <ChatInput />
         </div>
       </main>
     </>
