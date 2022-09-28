@@ -1,8 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import ChatBubble from "../components/ChatBuddle";
-import { trpc } from "../utils/trpc";
 import ChatInput from "../components/ChatInput";
+import { irishRailApi } from "../external/irishrail/api";
+import { useQuery } from "react-query";
 
 const sampleChat = [
   {
@@ -24,6 +25,14 @@ const sampleChat = [
 ];
 
 const Home: NextPage = () => {
+  const api = irishRailApi;
+
+  // const { data } = useQuery("stations", () =>
+  //   api.getTrainMovements({ TrainId: "e109", TrainDate: new Date() })
+  // );
+  //
+  // console.log(data);
+
   return (
     <>
       <Head>
@@ -48,7 +57,7 @@ const Home: NextPage = () => {
             ))}
           </div>
         </div>
-        <div className="w-full p-4">
+        <div className="w-full p-4 fixed bottom-0 bg-white">
           <ChatInput />
         </div>
       </main>

@@ -20,4 +20,12 @@ export default defineNextConfig({
     locales: ["en"],
     defaultLocale: "en",
   },
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'http://api.irishrail.ie/realtime/realtime.asmx/:path*',
+      },
+    ]
+  },
 });

@@ -6,9 +6,16 @@ import type { AppType } from "next/dist/shared/lib/utils";
 import superjson from "superjson";
 import type { AppRouter } from "../server/router";
 import "../styles/globals.css";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
-  return <Component {...pageProps} />;
+  const queryClient = new QueryClient();
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Component {...pageProps} />;
+    </QueryClientProvider>
+  );
 };
 
 const getBaseUrl = () => {
