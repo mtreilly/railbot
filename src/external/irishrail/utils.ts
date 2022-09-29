@@ -18,7 +18,6 @@ export const request = async (endpoint: string, params = {}) => {
   const response = await fetch(
     `${ROOT_URL}/api${endpoint}` + processedParamsString
   );
-
   return parseRequest(response);
 };
 
