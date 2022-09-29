@@ -43,7 +43,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
         return res.status(200).json(response);
       }
-    } catch {
+    } catch (error) {
+      console.log("error: ", error);
       const message = {
         text: "Sorry, I don't know how to answer that",
         isUser: false,
