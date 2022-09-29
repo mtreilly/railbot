@@ -1,0 +1,75 @@
+{
+  "id": "e9d405e4-31f3-49e7-8a4c-a07772fa699d",
+  "name": "GetDartStations",
+  "auto": true,
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "conditionalResponses": [],
+  "context": [],
+  "contexts": [],
+  "endInteraction": false,
+  "events": [],
+  "fallbackIntent": false,
+  "liveAgentHandoff": false,
+  "parentId": null,
+  "followUpIntents": [],
+  "priority": 500000,
+  "responses": [
+    {
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "defaultResponsePlatforms": {},
+      "messages": [
+        {
+          "type": "message",
+          "condition": "",
+          "speech": []
+        }
+      ],
+      "resetContexts": false
+    }
+  ],
+  "rootParentId": null,
+  "templates": [],
+  "userSays": [
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "Dart Stations",
+          "userDefined": false
+        }
+      ],
+      "count": 1,
+      "id": "cc1a2669-41da-48ea-9da2-32eeccfed46e",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "what stations are for the dart",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "92b198da-0028-4b03-9d70-929b2a9b8fae",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "what are the dart stations",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "f114cbbd-9224-492a-b85d-4c3a91dd8c47",
+      "updated": null
+    }
+  ],
+  "webhookForSlotFilling": false,
+  "webhookUsed": true
+}

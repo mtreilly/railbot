@@ -1,0 +1,125 @@
+{
+  "id": "6fb4bccd-97ef-47c9-b5cb-d9c84d62df5b",
+  "name": "CurrentTrainsFromStationCode",
+  "auto": true,
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "conditionalResponses": [],
+  "context": [],
+  "contexts": [],
+  "endInteraction": false,
+  "events": [],
+  "fallbackIntent": false,
+  "liveAgentHandoff": false,
+  "parentId": null,
+  "followUpIntents": [],
+  "priority": 500000,
+  "responses": [
+    {
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "StationCode",
+          "dataType": "@StationCode",
+          "isList": false,
+          "required": true,
+          "prompts": [],
+          "value": "$StationCode",
+          "outputDialogContexts": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "messages": [
+        {
+          "type": "message",
+          "condition": "",
+          "speech": []
+        }
+      ],
+      "resetContexts": false
+    }
+  ],
+  "rootParentId": null,
+  "templates": [],
+  "userSays": [
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "what are the trains from ",
+          "userDefined": false
+        },
+        {
+          "text": "BFSTC",
+          "userDefined": false,
+          "alias": "StationCode",
+          "meta": "@StationCode"
+        }
+      ],
+      "count": 0,
+      "id": "261179b8-f8c0-4176-abf2-4a8250770366",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "trains from ",
+          "userDefined": false
+        },
+        {
+          "text": "BFSTC",
+          "userDefined": false,
+          "alias": "StationCode",
+          "meta": "@StationCode"
+        }
+      ],
+      "count": 0,
+      "id": "9fc23554-c70d-44e7-97fb-ca0bf76b1236",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "what trains are running from ",
+          "userDefined": false
+        },
+        {
+          "text": "BFSTC",
+          "userDefined": false,
+          "alias": "StationCode",
+          "meta": "@StationCode"
+        }
+      ],
+      "count": 0,
+      "id": "b0b05875-7862-4f3e-9e47-7241f36da65e",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "any trains from ",
+          "userDefined": false
+        },
+        {
+          "text": "BFSTC",
+          "userDefined": true,
+          "alias": "StationCode",
+          "meta": "@StationCode"
+        }
+      ],
+      "count": 0,
+      "id": "adb0f80a-1011-42e9-b25e-6c203348a8e7",
+      "updated": null
+    }
+  ],
+  "webhookForSlotFilling": false,
+  "webhookUsed": true
+}

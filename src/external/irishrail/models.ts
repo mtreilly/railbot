@@ -113,63 +113,63 @@ export type StationSchema = {
 };
 
 export type StationFilterSchema = {
-  StationCode: string;
-  StationDesc: string;
-  StationDesc_sp: string;
+  Stationcode: string;
+  Stationdesc: string;
+  Stationdesc_sp: string;
 };
 
 export type TrainSchema = {
-  TrainStatus: TrainStatusSchema;
-  TrainLatitude: string;
-  TrainLongitude: string;
-  TrainCode: string;
-  TrainDate: string;
-  PublicMessage: string;
+  Trainstatus: TrainStatusSchema;
+  Trainlatitude: string;
+  Trainlongitude: string;
+  Traincode: string;
+  Traindate: string;
+  Publicmessage: string;
   // Direction is either Northbound or Southbound for trains between Dundalk and Rosslare and between Sligo and Dublin.
   // For all other trains the direction is to the destination eg. To Limerick
   Direction: string;
 };
 
 export type TrainMovementSchema = {
-  TrainCode: string;
-  TrainDate: string;
-  LocationCode: string;
-  LocationFullName: string;
-  LocationOrder: string;
-  LocationType: LocationTypeMovementSchema;
-  TrainOrigin: string;
-  TrainDestination: string;
-  ScheduledArrival: string;
-  ScheduledDeparture: string;
-  ExpectedArrival: string;
-  ExpectedDeparture: string;
+  Traincode: string;
+  Traindate: string;
+  Locationcode: string;
+  Locationfullname: string;
+  Locationorder: string;
+  Locationtype: LocationTypeMovementSchema;
+  Trainorigin: string;
+  Traindestination: string;
+  Scheduledarrival: string;
+  Scheduleddeparture: string;
+  Expectedarrival: string;
+  Expecteddeparture: string;
   Arrival: string;
   Departure: string;
-  AuthArrival: string;
-  AuthDeparture: string;
-  StopType: StopTypeSchema;
+  Autharrival: string;
+  Authdeparture: string;
+  Stoptype: StopTypeSchema;
 };
 
 export type StationDataSchema = {
-  ServerTime: string;
-  TrainCode: string;
-  StationFullName: string;
-  StationCode: string;
-  QueryTime: string;
-  TrainDate: string;
+  Servertime: string;
+  Traincode: string;
+  Stationfullname: string;
+  Stationcode: string;
+  Querytime: string;
+  Traindate: string;
   Origin: string;
   Destination: string;
-  OriginTime: string;
-  DestinationTime: string;
+  Origintime: string;
+  Destinationtime: string;
   Status: string;
-  LastLocation: string;
-  DueIn: string;
+  Lastlocation: string;
+  Duein: string;
   Late: string;
-  ExpArrival: string;
-  ExpDeparture: string;
-  SchArrival: string;
-  SchDeparture: string;
+  Exparrival: string;
+  Expdeparture: string;
+  Scharrival: string;
+  Schdeparture: string;
   Direction: string;
-  TrainType: TrainType;
-  LocationType: LocationTypeStationSchema;
+  Traintype: TrainType;
+  Locationtype: LocationTypeStationSchema;
 };

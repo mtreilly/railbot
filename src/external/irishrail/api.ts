@@ -19,7 +19,7 @@ export const irishRailApi = {
     const result: StationSchema[] =
       parsedData["ArrayOfObjStation"]["objStation"];
 
-    return resultToArray(result);
+    return resultToArray<StationSchema>(result);
   },
 
   // http://api.irishrail.ie/realtime/realtime.asmx/getAllStationsXML_WithStationType?StationType=D
@@ -31,7 +31,7 @@ export const irishRailApi = {
     const result: StationSchema[] =
       parsedData["ArrayOfObjStation"]["objStation"];
 
-    return resultToArray(result);
+    return resultToArray<StationSchema>(result);
   },
 
   // http://api.irishrail.ie/realtime/realtime.asmx/getCurrentTrainsXML
@@ -39,7 +39,7 @@ export const irishRailApi = {
     const parsedData = await request("/getCurrentTrainsXML");
     const result: TrainSchema[] =
       parsedData["ArrayOfObjTrainPositions"]["objTrainPositions"];
-    return resultToArray(result);
+    return resultToArray<TrainSchema>(result);
   },
 
   // http://api.irishrail.ie/realtime/realtime.asmx/getCurrentTrainsXML_WithTrainType?TrainType=D
@@ -51,7 +51,7 @@ export const irishRailApi = {
     const result: TrainSchema[] =
       parsedData["ArrayOfObjTrainPositions"]["objTrainPositions"];
 
-    return resultToArray(result);
+    return resultToArray<TrainSchema>(result);
   },
 
   // http://api.irishrail.ie/realtime/realtime.asmx/getStationDataByNameXML?StationDesc=Bayside
@@ -61,7 +61,7 @@ export const irishRailApi = {
     const result: StationDataSchema[] =
       parsedData["ArrayOfObjStationData"]["objStationData"];
 
-    return resultToArray(result);
+    return resultToArray<StationDataSchema>(result);
   },
   // http://api.irishrail.ie/realtime/realtime.asmx/getStationDataByNameXML_withNumMins?StationDesc=Bayside&NumMins=20
   getStationDataByNameWithTime: async (params: {
@@ -76,7 +76,7 @@ export const irishRailApi = {
     const result: StationDataSchema[] =
       parsedData["ArrayOfObjStationData"]["objStationData"];
 
-    return resultToArray(result);
+    return resultToArray<StationDataSchema>(result);
   },
 
   // http://api.irishrail.ie/realtime/realtime.asmx/getStationDataByCodeXML?StationCode=mhide
@@ -86,7 +86,7 @@ export const irishRailApi = {
     const result: StationDataSchema[] =
       parsedData["ArrayOfObjStationData"]["objStationData"];
 
-    return resultToArray(result);
+    return resultToArray<StationDataSchema>(result);
   },
 
   // http://api.irishrail.ie/realtime/realtime.asmx/getStationDataByCodeXML_WithNumMins?StationCode=mhide&NumMins=20
@@ -102,7 +102,7 @@ export const irishRailApi = {
     const result: StationDataSchema[] =
       parsedData["ArrayOfObjStationData"]["objStationData"];
 
-    return resultToArray(result);
+    return resultToArray<StationDataSchema>(result);
   },
 
   // http://api.irishrail.ie/realtime/realtime.asmx/getStationsFilterXML?StationText=br
@@ -111,7 +111,7 @@ export const irishRailApi = {
     const result: StationFilterSchema[] =
       parsedData["ArrayOfObjStationFilter"]["objStationFilter"];
 
-    return resultToArray(result);
+    return resultToArray<StationFilterSchema>(result);
   },
 
   // http://api.irishrail.ie/realtime/realtime.asmx/getTrainMovementsXML?TrainId=e109&TrainDate=21%20dec%202011
@@ -125,10 +125,9 @@ export const irishRailApi = {
     const processedParams = { ...params, TrainDate: newTrainDate };
     const parsedData = await request("/getTrainMovementsXML", processedParams);
 
-    return parsedData;
     const result: TrainMovementSchema[] =
       parsedData["ArrayOfObjTrainMovements"]["objTrainMovements"];
 
-    return resultToArray(result);
+    return resultToArray<TrainMovementSchema>(result);
   },
 };

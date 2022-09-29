@@ -1,37 +1,37 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import ChatBubble from "../components/ChatBuddle";
+import ChatBubble from "../components/ChatBubble";
 import ChatInput from "../components/ChatInput";
-import { irishRailApi } from "../external/irishrail/api";
-import { useQuery } from "react-query";
+import { useEffect, useRef, useState } from "react";
 
-const sampleChat = [
+const initialChat = [
   {
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ipsa dignissimos at, ea vero, aliquam nesciunt atque sit totam dolor recusandae nisi magnam",
+    text: "Welcome to the Irish Rail Chatbot!",
     isUser: false,
-  },
-  {
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ipsa dignissimos at, ea vero, aliquam nesciunt atque sit totam dolor recusandae nisi magnam",
-    isUser: true,
-  },
-  {
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ipsa dignissimos at, ea vero, aliquam nesciunt atque sit totam dolor recusandae nisi magnam",
-    isUser: false,
-  },
-  {
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ipsa dignissimos at, ea vero, aliquam nesciunt atque sit totam dolor recusandae nisi magnam",
-    isUser: false,
+    data: null,
   },
 ];
 
 const Home: NextPage = () => {
-  const api = irishRailApi;
+  const [chatLog, setChatLog] = useState(initialChat);
 
-  // const { data } = useQuery("stations", () =>
-  //   api.getTrainMovements({ TrainId: "e109", TrainDate: new Date() })
-  // );
-  //
-  // console.log(data);
+  const updateChatLog = (text: string, isUser = true, data = null) => {
+    setChatLog((prev) => [
+      ...prev,
+      {
+        text,
+        isUser: isUser,
+        data: data,
+      },
+    ]);
+  };
+
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.scrollTop = ref.current.scrollHeight;
+    }
+  }, [chatLog]);
 
   return (
     <>
@@ -44,21 +44,32 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex h-screen flex-col items-center  bg-gray-50">
+      <main className="flex h-screen flex-col items-center bg-gray-50">
         <div>
-          <h1 className="text-5xl md:text-[5rem] leading-normal font-extrabold text-gray-700">
+          <h1 className="text-3xl md:text-[4rem] leading-normal font-extrabold text-gray-700">
             RailBot
           </h1>
         </div>
-        <div className="flex h-full flex-col pt-3 mt-3 w-full m-4 p-4 rounded-lg">
+        <div
+          ref={ref}
+          style={{ overflow: "scroll" }}
+          className="flex h-full flex-col pt-3 px-3 mt-3 w-full sm:w-3/4 m-4 rounded-lg"
+        >
           <div className="flex flex-row flex-wrap">
-            {sampleChat.map((chat, index) => (
-              <ChatBubble key={index} text={chat.text} isUser={chat.isUser} />
+            {chatLog.map((chat, index) => (
+              <ChatBubble
+                key={index}
+                text={chat.text}
+                isUser={chat.isUser}
+                data={chat.data}
+              />
             ))}
+            <hr className="w-full h-20 border-2 border-gray-50" />
           </div>
         </div>
+
         <div className="w-full p-4 fixed bottom-0 bg-white">
-          <ChatInput />
+          <ChatInput updateChatLog={updateChatLog} />
         </div>
       </main>
     </>

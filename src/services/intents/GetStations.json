@@ -1,0 +1,87 @@
+{
+  "id": "eb4f55bd-526a-4b1f-9179-4d11c6642df2",
+  "name": "GetStations",
+  "auto": true,
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "conditionalResponses": [],
+  "context": [],
+  "contexts": [],
+  "endInteraction": false,
+  "events": [],
+  "fallbackIntent": false,
+  "liveAgentHandoff": false,
+  "parentId": null,
+  "followUpIntents": [],
+  "priority": 500000,
+  "responses": [
+    {
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "defaultResponsePlatforms": {},
+      "messages": [
+        {
+          "type": "message",
+          "condition": "",
+          "speech": []
+        }
+      ],
+      "resetContexts": false
+    }
+  ],
+  "rootParentId": null,
+  "templates": [],
+  "userSays": [
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "list stations",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "7a3b4b68-3f9b-435e-9b36-b8bf144d2e0a",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "return all stations",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "4e339cfa-ec44-4e9a-a3f4-ae4651008af9",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "get all stations",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "5eb320de-dda7-4228-93ca-058496b71845",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "what are the stations",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "a3d48362-3818-4b7a-99b1-364c5b18881a",
+      "updated": null
+    }
+  ],
+  "webhookForSlotFilling": false,
+  "webhookUsed": true
+}

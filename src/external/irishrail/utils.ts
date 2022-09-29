@@ -1,5 +1,6 @@
 import { XMLParser } from "fast-xml-parser";
 
+const ROOT_URL = "http://localhost:3000";
 const parseRequest = async (response: Response) => {
   const responseText = await response.text();
   const parser = new XMLParser();
@@ -11,15 +12,18 @@ export const request = async (endpoint: string, params = {}) => {
   if (processedParams.toString().length > 0) {
     processedParamsString += "?" + processedParams.toString();
   }
-  const response = await fetch(`/api${endpoint}` + processedParamsString);
+  const response = await fetch(
+    `${ROOT_URL}/api${endpoint}` + processedParamsString
+  );
 
   return parseRequest(response);
 };
 
-export const resultToArray = (result: any) => {
+export const resultToArray = <T>(result: T[]) => {
   if (Array.isArray(result)) {
     return result;
   } else {
-    return [];
+    const emptyResult: T[] = [];
+    return emptyResult;
   }
 };

@@ -1,0 +1,63 @@
+{
+  "id": "4e08f298-fd49-4c33-ba16-b28f9949d30e",
+  "name": "CurrentTrains",
+  "auto": true,
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "conditionalResponses": [],
+  "context": [],
+  "contexts": [],
+  "endInteraction": false,
+  "events": [],
+  "fallbackIntent": false,
+  "liveAgentHandoff": false,
+  "parentId": null,
+  "followUpIntents": [],
+  "priority": 500000,
+  "responses": [
+    {
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "defaultResponsePlatforms": {},
+      "messages": [
+        {
+          "type": "message",
+          "condition": "",
+          "speech": []
+        }
+      ],
+      "resetContexts": false
+    }
+  ],
+  "rootParentId": null,
+  "templates": [],
+  "userSays": [
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "what are the current trains",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "0b1cf0e3-c9db-4286-a80c-02a426a7d0fe",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "what trains are running",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "4b81d6f8-993a-49f4-a240-bbdd9559bed0",
+      "updated": null
+    }
+  ],
+  "webhookForSlotFilling": true,
+  "webhookUsed": true
+}
