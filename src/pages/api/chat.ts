@@ -4,8 +4,14 @@ import { processRequest } from "../../services/processRequest";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
+    // const sessionClient = new dialogflow.SessionsClient({
+    //   keyFilename: "./src/services/dialogFlowService.json",
+    // });
     const sessionClient = new dialogflow.SessionsClient({
-      keyFilename: "./src/services/dialogFlowService.json",
+      credentials: {
+        private_key: process.env.DIALOGFLOW_PRIVATE_KEY,
+        client_email: process.env.DIALOGFLOW_CLIENT_EMAIL,
+      },
     });
     const sessionPath = sessionClient.projectAgentSessionPath(
       "railbot-agli",
