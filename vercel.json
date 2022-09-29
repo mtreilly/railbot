@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/chat": {
+    "api/*.ts": {
       "includeFiles": "src/services/**"
     }
   }
