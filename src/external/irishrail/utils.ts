@@ -15,9 +15,10 @@ export const request = async (endpoint: string, params = {}) => {
   if (processedParams.toString().length > 0) {
     processedParamsString += "?" + processedParams.toString();
   }
-  const response = await fetch(
-    `${ROOT_URL}/api${endpoint}` + processedParamsString
-  );
+  const url = `${ROOT_URL}/api${endpoint}` + processedParamsString;
+  console.log("requesting", url);
+  const response = await fetch(url);
+  console.log("got response ");
   return parseRequest(response);
 };
 

@@ -17,7 +17,8 @@ export default defineNextConfig({
   swcMinify: true,
   // Next.js i18n docs: https://nextjs.org/docs/advanced-features/i18n-routing
   publicRuntimeConfig: {
-    rootURL: process.env.NEXTAUTH_URL
+    // rootURL: process.env.NEXTAUTH_URL
+    rootURL: "https://1864-37-110-219-254.ngrok.io"
   },
   i18n: {
     locales: ["en"],

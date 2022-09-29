@@ -8,6 +8,7 @@ export const processRequest = async (response: IQueryResult) => {
     : "Sorry, I don't know how to answer that";
 
   const data = null;
+  console.log("running process request");
 
   switch (response.intent?.name) {
     case "projects/railbot-agli/agent/intents/e9d405e4-31f3-49e7-8a4c-a07772fa699d": {
@@ -22,7 +23,9 @@ export const processRequest = async (response: IQueryResult) => {
       break;
     }
     case "projects/railbot-agli/agent/intents/eb4f55bd-526a-4b1f-9179-4d11c6642df2": {
+      console.log("running get all stations");
       const result = await irishRailApi.getAllStations();
+      console.log(result);
       text = `There are ${result.length} stations, listed in alphabetical order with code and name: `;
       console.log(result);
       const stationList = result.map((station) => {
@@ -33,7 +36,7 @@ export const processRequest = async (response: IQueryResult) => {
     }
     case "projects/railbot-agli/agent/intents/4e08f298-fd49-4c33-ba16-b28f9949d30e": {
       const result = await irishRailApi.getCurrentTrains();
-      text = `There is currently ${result.length} trains running, please about a station to get more information are request a list of stations`;
+      text = `There is currently ${result.length} trains running, please ask about a station to get more information are request to "get all stations"`;
       break;
     }
     case "projects/railbot-agli/agent/intents/e40c5cca-fc42-45a1-bfa6-8fef77d74e12": {
