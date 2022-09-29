@@ -1,6 +1,9 @@
 import { XMLParser } from "fast-xml-parser";
+import getConfig from "next/config";
+const { publicRuntimeConfig } = getConfig();
 
-const ROOT_URL = "http://localhost:3000";
+const ROOT_URL = publicRuntimeConfig.rootURL;
+
 const parseRequest = async (response: Response) => {
   const responseText = await response.text();
   const parser = new XMLParser();
